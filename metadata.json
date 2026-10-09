@@ -1,0 +1,6 @@
+{
+  "name": "Personal web-Lykke",
+  "description": "李珂 (Lykke) 的个人简历与作品空间",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作品集交互文件导航 - Portfolio PDF Navigation</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: #090a0f;
+      color: #f3f4f6;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      min-height: 100vh;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      max-width: 800px;
+    }
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #ffffff 0%, #9ca3af 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+      letter-spacing: -0.5px;
+    }
+    p.desc {
+      color: #9ca3af;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 28px;
+      width: 100%;
+      max-width: 1240px;
+    }
+    .card {
+      background: #12141c;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.22);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+    .img-btn {
+      display: block;
+      width: 100%;
+      height: 240px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      border: none;
+      background: #1a1d28;
+      padding: 0;
+      text-decoration: none;
+    }
+    .img-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .card:hover .img-btn img {
+      transform: scale(1.06);
+    }
+    .badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      color: #34d399;
+      font-size: 0.75rem;
+      font-family: monospace;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      font-weight: 600;
+    }
+    .open-tag {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(8px);
+      color: #e5e7eb;
+      font-size: 0.8rem;
+      padding: 6px 12px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      transition: background 0.2s;
+    }
+    .card:hover .open-tag {
+      background: #2563eb;
+      color: #fff;
+    }
+    .info {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .category {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #60a5fa;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    .title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #f3f4f6;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .target-path {
+      font-size: 0.78rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      color: #9ca3af;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 6px 10px;
+      border-radius: 6px;
+      margin-top: auto;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      word-break: break-all;
+    }
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>作品集交互文件预览</h1>
+    <p class="desc">点击任意图片按钮，将在新标签页中打开对应独立完整的作品文件。支持本地 Mac 桌面绝对路径与在线服务器相对路径自动适配。</p>
+  </header>
+
+  <div class="grid">
+    <!-- 01 · 楚风香茗 · 湖北茶品牌VI设计 -->
+    <div class="card">
+      <a href="/documents/品牌VI.pdf" target="_blank" rel="noopener noreferrer" class="img-btn">
+        <span class="badge">01</span>
+        <img src="/images/DL_Leaflet_Grid_1 1.png" alt="楚风香茗 · 湖北茶品牌VI设计">
+        <span class="open-tag">新标签页打开 ↗</span>
+      </a>
+      <div class="info">
+        <div class="category">品牌VI设计</div>
+        <div class="title">01 · 楚风香茗 · 湖北茶品牌VI设计</div>
+        <div class="target-path">/documents/品牌VI.pdf</div>
+      </div>
+    </div>
+
+    <!-- 02 · 泰康保险集团茶礼 · 包装设计（茶锦福运） -->
+    <div class="card">
+      <a href="/documents/包装.pdf" target="_blank" rel="noopener noreferrer" class="img-btn">
+        <span class="badge">02</span>
+        <img src="/images/茶饼5.png" alt="泰康保险集团茶礼 · 包装设计（茶锦福运）">
+        <span class="open-tag">新标签页打开 ↗</span>
+      </a>
+      <div class="info">
+        <div class="category">包装设计</div>
+        <div class="title">02 · 泰康保险集团茶礼 · 包装设计（茶锦福运）</div>
+        <div class="target-path">/documents/包装.pdf</div>
+      </div>
+    </div>
+
+    <!-- 03 · 艺设走廊 · 导视系统设计 -->
+    <div class="card">
+      <a href="/documents/导视.pdf" target="_blank" rel="noopener noreferrer" class="img-btn">
+        <span class="badge">03</span>
+        <img src="/images/Frame 14.png" alt="艺设走廊 · 导视系统设计">
+        <span class="open-tag">新标签页打开 ↗</span>
+      </a>
+      <div class="info">
+        <div class="category">导视系统设计</div>
+        <div class="title">03 · 艺设走廊 · 导视系统设计</div>
+        <div class="target-path">/documents/导视.pdf</div>
+      </div>
+    </div>
+
+    <!-- 04 · 环保黑胶 · 音乐生物可视化 · 手机网页设计/交互设计 -->
+    <div class="card">
+      <a href="/documents/交互.pdf" target="_blank" rel="noopener noreferrer" class="img-btn">
+        <span class="badge">04</span>
+        <img src="/images/二-2.png" alt="环保黑胶 · 音乐生物可视化">
+        <span class="open-tag">新标签页打开 ↗</span>
+      </a>
+      <div class="info">
+        <div class="category">网页 / 交互设计</div>
+        <div class="title">04 · 环保黑胶 · 音乐生物可视化 · 手机网页设计 / 交互设计</div>
+        <div class="target-path">/documents/交互.pdf</div>
+      </div>
+    </div>
+
+    <!-- 05 · 数字化生活 · 交互网页设计/3D建模/动画 -->
+    <div class="card">
+      <a href="/documents/交互-3D.pdf" target="_blank" rel="noopener noreferrer" class="img-btn">
+        <span class="badge">05</span>
+        <img src="/images/截图81.png" alt="数字化生活 · 交互网页设计 / 3D 建模 / 动画">
+        <span class="open-tag">新标签页打开 ↗</span>
+      </a>
+      <div class="info">
+        <div class="category">交互网页 / 3D 建模 / 动画</div>
+        <div class="title">05 · 数字化生活 · 交互网页设计 / 3D 建模 / 动画</div>
+        <div class="target-path">/documents/交互-3D.pdf</div>
+      </div>
+    </div>
+
+    <!-- 06 · 遗忘的避风港 · 3D建模/TouchDesigner -->
+    <div class="card">
+      <a href="/documents/3D.pdf" target="_blank" rel="noopener noreferrer" class="img-btn">
+        <span class="badge">06</span>
+        <img src="/images/避风港.png" alt="遗忘的避风港 · 3D 建模 / TouchDesigner">
+        <span class="open-tag">新标签页打开 ↗</span>
+      </a>
+      <div class="info">
+        <div class="category">3D 建模 / TouchDesigner</div>
+        <div class="title">06 · 遗忘的避风港 · 3D 建模 / TouchDesigner</div>
+        <div class="target-path">/documents/3D.pdf</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>DESIGN PORTFOLIO INTERACTION · 6 个独立作品文件已全部更新并对齐</p>
+  </footer>
+
+  <script>
+    function openFileSafely(event, localPath, webPath) {
+      // If run locally (file:// protocol), browser directly opens the local path
+      // If run on web server (http:// or https:// protocol), browser opens relative web path to avoid Same-Origin block
+      if (window.location.protocol === 'file:') {
+        return; // default anchor href takes over
+      }
+      event.preventDefault();
+      window.open(webPath, '_blank');
+    }
+  </script>
+</body>
+</html>

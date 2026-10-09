@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-mesh: #1E1E20;
+    --bg-card: #1E1E20;
+    --text-primary: #F1F1F1;
+    --text-secondary: #E2E8F0;
+    --text-muted: #94A3B8;
+    --accent-red: #E4032E;
+    --accent-blue: #38BDF8;
+    --accent-pink: #FF95B4;
+    --border-mesh: transparent;
+  }
+
+  body {
+    font-family: 'Noto Sans SC', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'PingFang SC', sans-serif;
+    background-color: #1E1E20;
+    color: #F1F1F1;
+    cursor: default;
+    overflow-x: hidden;
+  }
+}
+
+.font-condensed {
+  font-family: 'Barlow Condensed', -apple-system, BlinkMacSystemFont, 'Arial Narrow', sans-serif;
+}
+
+.font-noto {
+  font-family: 'Noto Sans SC', 'PingFang SC', sans-serif;
+}
+
+.font-sans-body {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans SC', sans-serif;
+}
+
+/* Technical Aerodynamic Flow & Mesh with Light Lines (No Vertical Stripes) */
+.bg-mesh-grid {
+  background-color: #1E1E20;
+}
+
+.bg-pinstripes {
+  background-color: #1E1E20;
+}
+
+.bg-carbon {
+  background-color: #1E1E20;
+}
+
+/* Completely hide all scrollbars and scroll tracks across all browsers */
+::-webkit-scrollbar {
+  display: none !important;
+  width: 0px !important;
+  height: 0px !important;
+}
+
+html, body {
+  scrollbar-width: none !important; /* Firefox */
+  -ms-overflow-style: none !important; /* IE & Edge */
+}
+
+/* Print Styles for Direct Resume Printing */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Organic Fluid Shapes (Organic Shapes) Floating & Breathing Animations */
+@keyframes fluidFloat1 {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+  33% {
+    transform: translate(16px, -18px) rotate(2deg) scale(1.03);
+  }
+  66% {
+    transform: translate(-12px, 14px) rotate(-1.5deg) scale(0.97);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes fluidFloat2 {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+  33% {
+    transform: translate(-20px, 16px) rotate(-2.5deg) scale(0.96);
+  }
+  66% {
+    transform: translate(14px, -12px) rotate(2deg) scale(1.04);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes fluidFloat3 {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(18px, 15px) rotate(3deg) scale(1.05);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes fluidFloat4 {
+  0% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(-15px, -16px) rotate(-2deg) scale(0.98);
+  }
+  100% {
+    transform: translate(0px, 0px) rotate(0deg) scale(1);
+  }
+}
+
+@keyframes fluidBreathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.95;
+  }
+}
+
+.animate-fluid-1 {
+  animation: fluidFloat1 18s ease-in-out infinite;
+}
+
+.animate-fluid-2 {
+  animation: fluidFloat2 24s ease-in-out infinite;
+}
+
+.animate-fluid-3 {
+  animation: fluidFloat3 21s ease-in-out infinite;
+}
+
+.animate-fluid-4 {
+  animation: fluidFloat4 27s ease-in-out infinite;
+}
+
+.animate-fluid-breathe {
+  animation: fluidBreathe 14s ease-in-out infinite;
+}
+
+
